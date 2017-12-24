@@ -1,3 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400')
+
+@mixin border-radius($round)
+    border-radius: $round
+    -webkit-border-radius: $round
+    -moz-border-radius: $round
+    -o-border-radius: $round
+
+@mixin transform($x, $y)
+	-webkit-transform: translate($x, $y)
+	   -moz-transform: translate($x, $y)
+	    -ms-transform: translate($x, $y)
+	     -o-transform: translate($x, $y)
+	        transform: translate($x, $y)
+
+body
+    background: #b0b0b0
+    font-family: 'Roboto', sans-serif
+
 .LoginBox
-    background: #fff
+    position: absolute
+    top: 50%
+    left: 50%
+    @include transform(-50%, -50%)
+
+    &-content
+        background: #fff
+        box-sizing: border-box
+        -webkit-box-shadow: 3px 3px 4px 0px rgba(0,0,0,0.09)
+        -moz-box-shadow: 3px 3px 4px 0px rgba(0,0,0,0.09)
+        box-shadow: 3px 3px 4px 0px rgba(0,0,0,0.09)
+        padding: 50px 35px 80px
+        position: relative
+        width: 400px
+
+        &-bg
+            background: #fff
+            -webkit-box-shadow: 3px 3px 4px 0px rgba(0,0,0,0.09)
+            -moz-box-shadow: 3px 3px 4px 0px rgba(0,0,0,0.09)
+            box-shadow: 3px 3px 4px 0px rgba(0,0,0,0.09)
+            position: absolute
+            bottom: -21px
+            left: 50%
+            @include transform(-50%, -50%)
+            width: 95%
+            height: 30px
+            z-index: -1
+
+        h2
+            margin: 0 0 30px
+            padding: 0
+            text-transform: uppercase
+            font-weight: 300
+
+    &-footer
+        max-width: 192px
+        margin: 30px auto 0
+
+.TextBox
+    width: 100%
+
+    input
+        background: #dfdfdf
+        border: 0
+        box-sizing: border-box
+        @include border-radius(5px)
+        display: block
+        font-weight: 300
+        margin-bottom: 15px
+        padding: 15px 20px
+        font-size: 14px
+        width: 100%
+
+        &:focus,
+        &:hover
+            outline: 0
+
+.ButtonBox
+    background: #f24c3b
+    border: 0
+    @include border-radius(5px)
+    color: #fff
+    cursor: pointer
+    font-size: 16px
     padding: 20px
+    width: 100%
+
+    &:focus,
+    &:hover
+        outline: 0

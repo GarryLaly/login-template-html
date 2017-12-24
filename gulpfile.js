@@ -18,5 +18,6 @@ gulp.task('min-css',function(){ //compress dan minify file css
 });
 
 gulp.task('automate', function() { //task runner watching file
-    gulp.watch('assets/sass/*.sass', ['sass', 'min-css']);
+    gulp.watch('assets/sass/*.sass', ['sass']);
+    gulp.watch('assets/css/*.css', ['min-css']);
 });
